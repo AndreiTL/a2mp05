@@ -22,6 +22,8 @@ import {WeatherFavoriteModelService} from './components/common/weather_favorite_
 import {TemperatureCelciumPipe} from './components/common/pipes/temperature.pipe';
 import {WindDirectionTextPipe} from './components/common/pipes/winddirectiontext.pipe';
 
+import {WindArrowDirective} from './directives/wind-arrow.directive';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import {WindDirectionTextPipe} from './components/common/pipes/winddirectiontext
     WeatherComponent,
     LoadMaskComponent,
     TemperatureCelciumPipe,
-    WindDirectionTextPipe
+    WindDirectionTextPipe,
+    WindArrowDirective
   ],
   providers: [
     RestService,

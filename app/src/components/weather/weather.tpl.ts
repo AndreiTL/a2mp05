@@ -23,7 +23,16 @@ export const template = `
                       <tr>
                           <td><span class="townname">{{town.name}}</span></td>
                           <td></td>
-                          <td><span>{{town.wind.deg | windDirectionTextPipe}}</span></td>
+                          <td>
+                              <div class="inlineblock">
+                                  <span>{{town.wind.deg | windDirectionTextPipe}}</span>
+                              </div>
+                              <div class="inlineblock">
+                                  <div [windArrow]="town.wind.deg||0">
+                                      <span>&#8593;</span>
+                                  </div>
+                              </div>
+                          </td>
                           <td>
                               <button (click)="removeTownFavorite(town)">
                                   <span>Unfav</span>
@@ -55,7 +64,16 @@ export const template = `
                 <tr>
                     <td><span class="townname">{{town.name}}</span></td>
                     <td></td>
-                    <td><span>{{town.wind.deg | windDirectionTextPipe}}</span></td>
+                    <td>
+                        <div class="inlineblock">
+                            <span>{{town.wind.deg | windDirectionTextPipe}}</span>
+                        </div>
+                        <div class="inlineblock">
+                            <div [windArrow]="town.wind.deg||0">
+                                <span>&#8593;</span>
+                            </div>
+                        </div>
+                    </td>
                     <td>
                         <button (click)="addTownFavorite(town)">
                             <span>Fav</span>
