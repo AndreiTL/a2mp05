@@ -3,11 +3,15 @@ import { Directive, ElementRef, Input } from '@angular/core';
   selector: '[weatherIcon]'
 })
 export class WeatherIconDirective {
-  // @Input() windArrow: number;
-  constructor(el: ElementRef) {
-    // el.nativeElement.style.backgroundColor = 'yellow';
-    // el.nativeElement.style.transform.rotate = this.windArrow;
-    // el.nativeElement.style
-    // el.nativeElement.innerHTML.appendChild()
+  @Input() weatherIcon: string;
+  constructor(private el: ElementRef) {
+
   }
+
+  ngAfterContentInit() {
+    let element = new ElementRef(
+      `<img src="http://openweathermap.org/img/w/${this.weatherIcon}.png" class="weather-icon">`
+    );
+    this.el.nativeElement.innerHTML = element.nativeElement;
+  };
 }

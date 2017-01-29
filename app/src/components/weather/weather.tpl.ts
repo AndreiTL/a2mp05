@@ -24,7 +24,9 @@ export const template = `
                     <table class="tablerow">
                       <tr>
                           <td><span class="townname">{{town.name}}</span></td>
-                          <td></td>
+                          <td>
+                            <div [weatherIcon]="town.weather[0].icon"></div>
+                          </td>
                           <td>
                               <div class="inlineblock">
                                   <span>{{town.wind.deg | windDirectionTextPipe}}</span>
@@ -70,7 +72,9 @@ export const template = `
               <table class="tablerow">
                 <tr>
                     <td><span class="townname">{{town.name}}</span></td>
-                    <td></td>
+                    <td>
+                      <div [weatherIcon]="town.weather[0].icon"></div>
+                    </td>
                     <td>
                         <div class="inlineblock">
                             <span>{{town.wind.deg | windDirectionTextPipe}}</span>
