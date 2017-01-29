@@ -23,6 +23,7 @@ import {TemperatureCelciumPipe} from './components/common/pipes/temperature.pipe
 import {WindDirectionTextPipe} from './components/common/pipes/winddirectiontext.pipe';
 
 import {WindArrowDirective} from './directives/wind-arrow.directive';
+import {TownColorDirective} from './directives/town-color.directive';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import {WindArrowDirective} from './directives/wind-arrow.directive';
     LoadMaskComponent,
     TemperatureCelciumPipe,
     WindDirectionTextPipe,
-    WindArrowDirective
+    WindArrowDirective,
+    TownColorDirective
   ],
   providers: [
     RestService,

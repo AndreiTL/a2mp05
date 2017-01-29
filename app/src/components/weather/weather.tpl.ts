@@ -18,7 +18,9 @@ export const template = `
                 </button>
             </div>
             <ul>
-                <li *ngFor="let town of favoriteTownsTable" class="rowelement">
+                <li *ngFor="let town of favoriteTownsTable" 
+                      class="rowelement"
+                      [townColor]="town.main.temp||'0'">
                     <table class="tablerow">
                       <tr>
                           <td><span class="townname">{{town.name}}</span></td>
@@ -29,7 +31,7 @@ export const template = `
                               </div>
                               <div class="inlineblock">
                                   <div [windArrow]="town.wind.deg||0">
-                                      <span>&#8593;</span>
+                                      <span>&#8595;</span>
                                   </div>
                               </div>
                           </td>
@@ -40,7 +42,10 @@ export const template = `
                           </td>
                       </tr>
                       <tr>
-                          <td><span>Temperature: </span><span>{{town.main.temp | temperatureCelciumPipe}}</span></td>
+                          <td>                                    
+                                <span>Temperature: </span>
+                                <span>{{town.main.temp | temperatureCelciumPipe}}</span>
+                          </td>
                           <td><span>Humidity: </span><span>{{town.main.humidity||''}}</span></td>
                           <td><span>Wind: </span><span>{{town.wind.speed||''}}</span><span> m/s</span></td>
                           <td></td>
@@ -59,7 +64,9 @@ export const template = `
     <div class="weather-line-title">Weather in towns: </div>      
     <div *ngIf="trigLoad">
         <ul>
-          <li *ngFor="let town of townsTable" class="rowelement">
+          <li *ngFor="let town of townsTable" 
+                      class="rowelement"
+                      [townColor]="town.main.temp||'0'">
               <table class="tablerow">
                 <tr>
                     <td><span class="townname">{{town.name}}</span></td>
@@ -70,7 +77,7 @@ export const template = `
                         </div>
                         <div class="inlineblock">
                             <div [windArrow]="town.wind.deg||0">
-                                <span>&#8593;</span>
+                                <span>&#8595;</span>
                             </div>
                         </div>
                     </td>
