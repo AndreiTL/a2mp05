@@ -5,7 +5,7 @@ import { Directive, ElementRef, Input } from '@angular/core';
 export class WindArrowDirective {
   @Input() windArrow: string;
   constructor(private el: ElementRef) {
-    el.nativeElement.style.transformOrigin = '15px';
+    el.nativeElement.style.transformOrigin = '12px';
     el.nativeElement.style.height = `24px`;
     el.nativeElement.style.width = `24px`;
     el.nativeElement.style.display = `table-cell`;
