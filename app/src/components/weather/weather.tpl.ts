@@ -10,7 +10,7 @@ export const template = `
                 <span>Add town to Favorite by id</span>                
             </button>
         </div>
-        <div *ngIf="favoriteTownsTable.length > 0" class="pos-relative">
+        <div *structureLoading="favoriteTownsTable.length > 0" class="pos-relative">
                     
             <div class="favorite-pane">            
                 <button (click)="reloadFavoritesTownsWeather()" class="favorite-button-right">
@@ -64,7 +64,7 @@ export const template = `
     </div>
     
     <div class="weather-line-title">Weather in towns: </div>      
-    <div *ngIf="trigLoad">
+    <div *structureLoading="trigLoad">
         <ul>
           <li *ngFor="let town of townsTable" 
                       class="rowelement"
